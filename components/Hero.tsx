@@ -17,13 +17,11 @@ const Hero = () => {
         >
           <h1 className="text-white mb-4 text-3xl sm:text-4xl lg:text-6xlxl lg:leading-normal font-extrabold">
             <span className=" bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I&apos;m{" "}
+              Hello, I&apos;m{" "} Syihab
             </span>
             <br></br>
             <TypeAnimation
               sequence={[
-                "Syihab",
-                1000,
                 "Front End Developer",
                 1000,
                 "Backend Developer",
@@ -39,16 +37,8 @@ const Hero = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-sm sm:text-base mb-6 lg:text-lg">
-            Hello, I&rsquo;m Syihab, a highly motivated informatics student
-            passionate about cloud computing, backend development, and frontend
-            development. I bring hands-on experience with Google Cloud (GCP),
-            proficiency in backend technologies like Node.js and Golang, and
-            expertise in crafting user-friendly interfaces using React and
-            Next.js. I&rsquo;m excited about the prospect of collaborating on
-            cutting-edge tech initiatives. If you share a similar passion or
-            have exciting opportunities, please don&rsquo;t hesitate to reach
-            out. Thank you!
-          </p>
+           Welcome to my personal website. I am a software engineer based in Yogyakarta, Indonesia. I am currently working at (-)  I am passionate about building scalable software, creating effective solutions, and learning every day to grow professionally in the IT field.
+           </p>
           <div>
             <Link
               href="/contact"
