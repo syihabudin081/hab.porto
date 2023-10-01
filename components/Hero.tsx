@@ -42,14 +42,14 @@ const Hero = () => {
           <div>
             <Link
               href="/contact"
-              className="px-6 inline-block py-3 text-center w-full md:w-fit rounded-full mr-4 border-white border-2 hover:border-black hover:text-black hover:bg-white"
+              className="px-6 inline-block py-3 text-center w-full md:w-fit rounded-full mr-4 text-white border-white border-2 hover:border-black hover:text-black hover:bg-white"
             >
               Hire Me
             </Link>
             <Link
               href="https://www.linkedin.com/in/syihabudin-rahmat-ramadhan-1b29651b5/"
               passHref={true}
-              className="px-1 inline-block py-1 text-center w-full md:w-fit rounded-full border-white border-2 hover:border-black hover:text-black hover:bg-white mt-3"
+              className="px-1 inline-block py-1 text-center w-full md:w-fit rounded-full text-white border-white border-2 hover:border-black hover:text-black hover:bg-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-white rounded-full px-5 py-2">
                 Download CV
