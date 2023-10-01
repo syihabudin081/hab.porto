@@ -10,7 +10,7 @@ interface EducationCardProps {
   degree?: string;
   startYear: string;
   endYear: string;
-    image: string;
+  image: string;
 }
 
 interface ExperienceCardProps {
@@ -28,25 +28,24 @@ const EducationCard: React.FC<EducationCardProps> = ({
   degree,
   startYear,
   endYear,
-  image
+  image,
 }) => {
   return (
-        <div className="card">
-        <div className="flex gap-3 items-center">
-          <Image src={image} alt={title} width={50} height={50} />
-          <div>
-            <h4 className=" text-base font-semibold">{title}</h4>
-            <p className="text-sm font-light">
-              {institution} - {degree}
-              <br />
-              {startYear} - {endYear}
-              <br />
-            </p>{" "}
-          </div>
+    <div className="card">
+      <div className="flex gap-3 items-center">
+        <Image src={image} alt={title} width={50} height={50} />
+        <div>
+          <h4 className=" text-base font-semibold">{title}</h4>
+          <p className="text-sm font-light">
+            {institution} - {degree}
+            <br />
+            {startYear} - {endYear}
+            <br />
+          </p>{" "}
         </div>
-        <br />
-        
       </div>
+      <br />
+    </div>
   );
 };
 

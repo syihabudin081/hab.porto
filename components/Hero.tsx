@@ -47,7 +47,8 @@ const Hero = () => {
               Hire Me
             </Link>
             <Link
-              href="/"
+              href="https://www.linkedin.com/in/syihabudin-rahmat-ramadhan-1b29651b5/"
+              passHref={true}
               className="px-1 inline-block py-1 text-center w-full md:w-fit rounded-full border-white border-2 hover:border-black hover:text-black hover:bg-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-white rounded-full px-5 py-2">
@@ -65,6 +66,7 @@ const Hero = () => {
           <div className="w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
             <Image
               src="/profile.jpeg"
+              priority={true}
               alt="hero image"
               className="absolute rounded-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               width={300}
