@@ -12,12 +12,14 @@
     "@heroicons/react": "^2.0.18",
     "framer-motion": "^10.16.4",
     "next": "latest",
+    "nodemailer": "^6.9.5",
     "react": "latest",
     "react-dom": "latest",
     "react-type-animation": "^3.1.0"
   },
   "devDependencies": {
     "@types/node": "latest",
+    "@types/nodemailer": "^6.4.11",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",

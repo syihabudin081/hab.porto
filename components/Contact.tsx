@@ -1,8 +1,62 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const Contact= () => {
+const Contact = () => {
+  const router = useRouter();
+  const [email, setEmail] = React.useState("");
+  const [subject, setSubject] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [submitting, setIsSubmitting] = React.useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = React.useState(false);
+
+  React.useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    if (showSuccessPopup) {
+      timeout = setTimeout(() => {
+        setShowSuccessPopup(false);
+      }, 5000); // Menghilangkan popup setelah 5 detik
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [showSuccessPopup]);
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    let data = {
+      subject,
+      email,
+      message,
+    };
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setShowSuccessPopup(true);
+        if (showSuccessPopup) {
+          setTimeout(() => {
+            setShowSuccessPopup(false);
+          }, 5000); // Menghilangkan popup setelah 5 detik
+        }
+        setSubject("");
+        setEmail("");
+        setMessage("");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -20,11 +74,29 @@ const Contact= () => {
           try my best to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/syihabudin081" target="_blank" passHref={true} >
-            <Image src="/github-icon.svg" alt="Github Icon" width={32} height={32}/>
+          <Link
+            href="https://github.com/syihabudin081"
+            target="_blank"
+            passHref={true}
+          >
+            <Image
+              src="/github-icon.svg"
+              alt="Github Icon"
+              width={32}
+              height={32}
+            />
           </Link>
-          <Link href="https://www.linkedin.com/in/syihabudin-rahmat-ramadhan-1b29651b5/" target="_blank" passHref={true}>
-            <Image src="/linkedin-icon.svg" alt="Linkedin Icon" width={32} height={32}/>
+          <Link
+            href="https://www.linkedin.com/in/syihabudin-rahmat-ramadhan-1b29651b5/"
+            target="_blank"
+            passHref={true}
+          >
+            <Image
+              src="/linkedin-icon.svg"
+              alt="Linkedin Icon"
+              width={32}
+              height={32}
+            />
           </Link>
         </div>
       </div>
@@ -42,6 +114,7 @@ const Contact= () => {
               id="email"
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="jacob@google.com"
             />
           </div>
@@ -55,6 +128,7 @@ const Contact= () => {
             <input
               type="text"
               id="subject"
+              onChange={(e) => setSubject(e.target.value)}
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Just saying hi"
@@ -70,6 +144,7 @@ const Contact= () => {
             <textarea
               name="message"
               id="message"
+              onChange={(e) => setMessage(e.target.value)}
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Let's talk about..."
             />
@@ -77,9 +152,15 @@ const Contact= () => {
           <button
             type="submit"
             className=" border text-white font-medium py-2.5 px-5 rounded-lg w-full"
+            onClick={handleSubmit}
           >
             Send Message
           </button>
+          {showSuccessPopup && (
+            <div className="bg-green-500 text-white p-4 rounded-lg mt-4">
+              Sukses mengirim email!
+            </div>
+          )}
         </form>
       </div>
     </section>
