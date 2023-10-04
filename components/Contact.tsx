@@ -71,7 +71,7 @@ const Contact = () => {
           {" "}
           I&apos;m currently looking for new opportunities, my inbox is always
           open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
+          try my best to get back to you!!
         </p>
         <div className="socials flex flex-row gap-2">
           <Link
