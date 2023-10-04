@@ -82,9 +82,9 @@ const About = () => {
     <section className="text-white" id="about">
       <div className="  items-center py-8  xl:gap-16 sm:py-16 ">
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <h2 className="text-lg sm:text-xl lg:text-3xl font-bold text-white mb-4">About Me</h2>
           <p className="text-[#ADB7BE] text-sm sm:text-base  lg:text-lg">
-            Hello, I&rsquo;m Syihab, a highly motivated informatics student
+            Hello, I&rsquo;m Syihabudin Rahmat Ramadhan, a highly motivated informatics student
             passionate about cloud computing, backend development, and frontend
             development. I bring hands-on experience with Google Cloud (GCP),
             proficiency in backend technologies like Node.js and Golang, and

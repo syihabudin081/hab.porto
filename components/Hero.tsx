@@ -15,11 +15,12 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="text-white mb-4 text-3xl sm:text-4xl lg:text-6xlxl lg:leading-normal font-extrabold">
+          <h1 className="text-white mb-4 text-lg sm:text-xl lg:text-3xl lg:leading-normal font-extrabold">
             <span className=" bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I&apos;m{" "} Syihab
+              Hello, I&apos;m{" "} Syihabudin Rahmat R.
             </span>
             <br></br>
+            <div className="text">
             <TypeAnimation
               sequence={[
                 "Front End Developer",
@@ -35,6 +36,7 @@ const Hero = () => {
               speed={50}
               repeat={Infinity}
             />
+            </div>
           </h1>
           <p className="text-[#ADB7BE] text-sm sm:text-base mb-6 lg:text-lg">
            Welcome to my personal website. I am a software engineer based in Yogyakarta, Indonesia. I am currently working at (-)  I am passionate about building scalable software, creating effective solutions, and learning every day to grow professionally in the IT field.
