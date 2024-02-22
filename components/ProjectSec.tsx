@@ -8,12 +8,21 @@ const projectsData = [
   {
     id: 1,
     title: "Nusabasa",
-    description: "Nusabasa, a digital learning app for Indonesian regional languages, aims toengage and educate the youth.With comprehensive courses, captivating learning materials, and user-friendly interface, Nusabasa promotes awareness and simplifies the process of learning local languages.",
+    description: "Nusabasa, a digital learning app for Indonesian regional languages, aims toengage and educate the youth. In this project, I took charge of the backend development and deployment of the application, ensuring that our platform runs smoothly and efficiently.",
     image: "/nusabasa.jpg",
     tag: ["All", "Mobile"],
     gitUrl: "https://gitlab.com/nusabasa",
     previewUrl: "google.com",
-  },
+  }, {
+    id: 2,
+    title: "MyGram",
+    description: "This is my Hacktiv8 project where I've created an API for an Instagram clone. The project is built using the Golang programming language and the Gin framework.",
+    image: "/golang.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/syihabudin081/mygram",
+    previewUrl: "google.com",
+},
+
   
 
 

@@ -35,6 +35,7 @@ const Hero = () => {
               wrapper="span"
               speed={50}
               repeat={Infinity}
+              className="font-normal"
             />
             </div>
           </h1>
