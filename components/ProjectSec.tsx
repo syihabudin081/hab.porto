@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useRef } from "react";
-import  ProjectCard  from "./ProjectCard";
+import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 
 const projectsData = [
   {
@@ -48,11 +49,18 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-lg sm:text-xl lg:text-3xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <ScrollReveal
+        baseOpacity={0}
+        enableBlur={true}
+        baseRotation={5}
+        blurStrength={10}
+        containerClassName="mb-8 md:mb-12"
+        size="xl"
+      >
         My Projects
-      </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-      {["All", "Web", "Mobile"].map((tagName) => (
+      </ScrollReveal>
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 py-6">
+        {["All", "Web", "Mobile"].map((tagName) => (
           <ProjectTag
             key={tagName}
             name={tagName}

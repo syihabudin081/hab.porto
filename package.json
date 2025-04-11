@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^10.18.0",
+    "gsap": "^3.12.7",
     "next": "latest",
     "nodemailer": "^6.9.5",
     "react": "latest",

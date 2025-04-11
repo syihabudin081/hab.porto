@@ -1,12 +1,18 @@
+import SplashCursor from '@/components/SplashCursor'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Syihabudin Rahmat Ramadhan',
-  description: 'Syihabudin Rahmat Ramadhan Personal Website',
+  description: 'Syihabudin Rahmat Ramadhan Personal site',
 }
 
 export default function RootLayout({
@@ -15,8 +21,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={poppins.className}>
+      <body>
+        <SplashCursor/>
+        {children}
+      </body>
     </html>
   )
 }

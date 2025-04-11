@@ -1,3 +1,7 @@
+import React from "react";
+import { motion } from "framer-motion";
+import StarBorder from "./StarBorder";
+
 interface ProjectTagProps {
   name: string;
   onClick: (name: string) => void;
@@ -9,16 +13,26 @@ const ProjectTag: React.FC<ProjectTagProps> = ({
   onClick,
   isSelected,
 }) => {
-  const buttonStyles = isSelected
-    ? "text-white border-primary-500"
-    : "text-[#ADB7BE] border-slate-600 hover:border-white";
   return (
-    <button
-      className={`${buttonStyles} rounded-full border-2 px-6 py-3 text-xl cursor-pointer`}
+    <motion.div
       onClick={() => onClick(name)}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className="cursor-pointer"
     >
-      {name}
-    </button>
+      <StarBorder
+        as="div"
+        className={`${isSelected ? "opacity-100" : "opacity-50 hover:opacity-75"}`}
+        color={isSelected ? "white" : "white/50"}
+        speed="5s"
+      >
+        <span className={`text-xs sm:text-sm md:text-base font-medium ${
+          isSelected ? "text-white" : "text-white/70"
+        }`}>
+          {name}
+        </span>
+      </StarBorder>
+    </motion.div>
   );
 };
 

@@ -1,31 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
+import StarBorder from "./StarBorder";
 
-export interface TabProps {
-  active: boolean;
-  selectTab: () => void;
+interface TabProps {
   children: React.ReactNode;
+  selectTab: () => void;
+  active: boolean;
 }
 
-const variants = {
-  default: { width: 0 },
-  active: { width: "calc(100% - 0.75rem)" },
-};
-
-const Tab: React.FC<TabProps> = ({ active, selectTab, children }) => {
-  const buttonClasses = active ? "text-white border-b" : "text-[#ADB7BE]";
-
+const Tab: React.FC<TabProps> = ({ children, selectTab, active }) => {
   return (
-    <button onClick={selectTab}>
-      <p className={`mr-3 font-semibold hover:text-white  ${buttonClasses}`}>
-        {children}
-      </p>
-      <motion.div
-        animate={active ? "active" : "default"}
-        variants={variants}
-        className="h-1 bg-primary-500 mt-2 mr-3"
-      ></motion.div>
-    </button>
+    <motion.div
+      onClick={selectTab}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className="cursor-pointer"
+    >
+      <StarBorder
+        as="div"
+        className={`${active ? "opacity-100" : "opacity-50 hover:opacity-75"}`}
+        color={active ? "white" : "gray"}
+        speed="5s"
+      >
+        <span className={`text-xs sm:text-sm md:text-base font-medium ${
+          active ? "text-white" : "text-gray-400"
+        }`}>
+          {children}
+        </span>
+      </StarBorder>
+    </motion.div>
   );
 };
 
