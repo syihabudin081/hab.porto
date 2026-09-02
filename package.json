@@ -1,33 +1,21 @@
 {
-  "name": "habporto",
-  "version": "0.1.0",
+  "name": "syihab-portfolio",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.18",
-    "framer-motion": "^10.18.0",
-    "gsap": "^3.12.7",
     "next": "latest",
-    "nodemailer": "^6.9.5",
     "react": "latest",
-    "react-dom": "latest",
-    "react-type-animation": "^3.1.0"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
-    "@types/nodemailer": "^6.4.11",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "autoprefixer": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
     "typescript": "latest"
   }
 }
